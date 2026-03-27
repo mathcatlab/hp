@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="description" content = "大岡英史の個人HPです。研究内容：電極触媒、速度論、化学反応ネットワーク理論、酵素動力学、機械学習">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/svg" href="images/crn_icon_blue_red.svg">
+<title>大岡英史 | 研究内容</title>
+<!-- CSS -->
+	<link rel="stylesheet" href="https://unpkg.com/destyle.css@1.0.5/destyle.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="canonical" href="https://hideshiooka.com/" />
+</head>
+
+<body>
+<div class="wrapper">
+    <!-- NAVIGATION -->
+    <div class="navbar">
+        <ul class="nav-contents">
+            <li><a href=index_JP.html>Home</a></li>
+            <li><a href=about_me_JP.html>About Me</a></li>
+            <li><a href=research_JP.html>Research</a></li>
+            <li class="dropdown"><a href="" >Achievements &#9660</a>
+				<ul>
+					<li><a href="publications_JP.html">Publications</a></li>
+					<li><a href="presentations_JP.html">Presentations</a></li>
+					<li><a href="funding_JP.html">Funding</a></li>
+					<li><a href="patents_JP.html">Patents</a></li>
+					<li><a href="awards_JP.html">Awards</a></li>
+				</ul>
+            </li>
+            <li><a href=vacancies_JP.html>Vacancies</a></li>
+            <li><a href=blog_JP.html>Blog</a></li>
+            <li><a href=contact_JP.html>Contact</a></li>
+            <li class="lang_toggle"><a href=research.html>English</a></li>
+        </ul>
+		<button class = "hamburger-menu">Menu</button>
+    </div>
+
+    <!-- PAGE SPECIFICS -->
+	<h2 id="Background">背景</h2>
+		<p>現在の触媒理論はSabatier則という法則に立脚しています。もともとは1911年ごろ、Paul Sabatier（仏）によって提唱された経験則で、良い触媒を作るためには触媒と反応基質の相互作用が適度に強いことが重要である、と主張しています。もし相互作用が弱すぎれば触媒の必要性はなくなりますし、逆に強すぎると触媒から反応が終わっても基質が離れなくなってしまうためです。現在では、この相互作用の強さを軸に、新触媒の探索が行われています。機械学習や人工知能を用いた現代の最先端の触媒探索技術も、基本的にはSabatier則を判断基準として、候補材料の優劣を判断しています。</p>
+		
+		<p>しかし、Sabatier則は熱力学に立脚した法則であるため、どの程度早く反応が進むかを予測することはできません。このため、実際の触媒特性、例えば反応速度や触媒寿命など、を定量的に予測するためには新たな理論開拓が必要です。現在、実験家と連携し、より正確な触媒特性を予測するための理論開拓に挑戦しています。</p>
+		<div class="fig">
+			<img src="images/From_Eq_to_NonEq.png" width=100%   alt="">
+			<p class = caption>既存の触媒理論（左）と私の研究（右）</p>
+		</div>
+		
+	<h2 id="Model Networks">モデル反応系</h2>
+		<h3>電極触媒反応</h3>
+		<p>電極触媒では、水素発生反応(HER)など、確立されている反応機構がいくつか存在します。これらを大賞とした数理解析により、従来理論よりも高い反応速度を与える結合の強さがあることを予測し(2019 <i>JPCL</i>)、実際に高活性触媒である白金の実験結果が理論を指示することを明らかにしてきました(2021 <i>ACS Catal.</i>)。特に、この論文では独自の機械学習アルゴリズムを開発し、実験データと理論式がどの程度整合性があり、フィッティングにより得られたパラメーターがどの程度確からしいかを評価しました。現在、より酸素発生反応（OER)など、より複雑な反応に展開しようとしています。</p>  
+
+		<p>代表論文: <a href = https://doi.org/10.1021/acs.jpclett.4c02162><i>JPCL</i> 2024</a>, <a href = https://pubs.acs.org/doi/full/10.1021/acscatal.1c01018><i>ACS Catalysis</i> 2021</a>, <a href = https://pubs.acs.org/doi/full/10.1021/acs.jpclett.9b01796><i>JPCL</i> 2019</a>.</p>
+        
+	
+		<h3 id="Michaelis-Menten Enzymes">ミカエリス・メンテン型の酵素</h3>
+		<p>酵素は触媒の一種であり、人工触媒と物理的な構造は異なっていても、理論構築をする上で多くの共通点があります。特に、ミカエリス・メンテン型の反応機構を持つ酵素は、一つしか中間体がないため、その速度式は水素発生反応などの電極触媒反応とほとんど同じ形になります。これを土台とし、基質と触媒の結合強度の指標となるミカエリス・メンテン定数(<i>K</i><sub>m</sub>)が基質濃度と等しい時に酵素活性が最大となることを理論的に予測しました。さらに、約1000種類の野生型酵素を対象としたバイオインフォマティクス解析により、自然界でも(<i>K</i><sub>m</sub> = [S])という法則が尊重されていることが示唆されました (2023 <i>Nat. Commun.</i>)。</p>
+			
+		<p>現在、実験家と連携し、この法則がどこまで適用可能か、評価しようとしています。いずれ、「良い」酵素が満たすべき物理化学的な条件が明らかになれば、複数の酵素の組み合わせからなる代謝ネットワークがどのように設計されてきたのか、ということに取り組みたいと考えています。</p>
+		
+		<p>代表論文: <a href = https://www.nature.com/articles/s41467-023-40471-y><i>Nat. Commun.</i> 2023</a>, <a href = https://onlinelibrary.wiley.com/doi/full/10.1002/anie.202318635><i>Angewandte</i> 2024</a></p>		
+
+		<div class="fig">
+			<img src="images/Catalysts_and_Enzymes.png" width=100%  alt="">
+			<p class = caption>触媒と酵素の類似性</p>
+		</div>
+
+	<h2 id="General Networks">抽象化された反応機構の解析</h2>
+		<p>上述のような、ある特定の反応機構をもとに速度論モデルを構築することは化学において古くから行われてきました。しかし、この手法では想定されうる反応機構を一つ一つ、解析しなければなりません。しかも、<i>in-situ</i>分光などにより、理論解析の前提となる反応機構が間違っていることが分かった場合、解析を一からやり直す必要があります。この限界を克服するため、複数の反応機構を同時に扱えるような、抽象化された反応機構を対象とした速度論解析も行っています。例えば、反応中間体の数が未知数(<i>N</i>個)の触媒の寿命を予測する理論式(2024 <i>JPCL</i>)を獲得しました。</p>
+			
+		<p>代表論文: <a href = https://doi.org/10.1021/acs.jpclett.4c02162><i>JPCL</i> 2024</a></p>	
+	<div id="footer">
+		<p>&copy:2023 Hideshi Ooka (Last Update: 2024/12/23)</p>
+	</div>
+</div>
+<!-- JavaScript -->
+	<script src="js/script.js"></script>
+</body>
+</html>
+
+

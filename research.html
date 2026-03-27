@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="description" content = "Personal Website of Hideshi Ooka. Research Projects: Electrocatalysis, Microkinetics, Biocatalysis, Chemical Reaction Networks, Machine Learning" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/svg" href="images/crn_icon_blue_red.svg">
+<title>Hideshi Ooka | Research</title>
+<!-- CSS -->
+	<link rel="stylesheet" href="https://unpkg.com/destyle.css@1.0.5/destyle.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="canonical" href="https://hideshiooka.com/" />
+</head>
+
+
+<body>
+<div class="wrapper">
+    <!-- NAVIGATION -->
+    <div class="navbar">
+        <ul class="nav-contents">
+            <li><a href=index.html>Home</a></li>
+            <li><a href=about_me.html>About Me</a></li>
+            <li><a href=research.html>Research</a></li>
+            <li class="dropdown"><a href="" >Achievements &#9660</a>
+				<ul>
+					<li><a href="publications.html">Publications</a></li>
+					<li><a href="presentations.html">Presentations</a></li>
+					<li><a href="funding.html">Funding</a></li>
+					<li><a href="patents.html">Patents</a></li>
+					<li><a href="awards.html">Awards</a></li>
+				</ul>
+            </li>
+            <li><a href=vacancies.html>Vacancies</a></li>
+            <li><a href=blog.html>Blog</a></li>
+            <li><a href=contact.html>Contact</a></li>
+            <li class="lang_toggle"><a href=research_JP.html>Japanese</a></li>
+        </ul>
+		<button class = "hamburger-menu">Menu</button>
+    </div>
+
+    <!-- PAGE SPECIFICS -->
+	<h2 id="Background">Background</h2>
+		<p> The Sabatier principle is at the core of our understanding of heterogeneous catalysis. Originally proposed around 1911 by the French chemist Paul Sabatier, this principle states that a good catalyst must bind the reactant at a strength which is "just right". If the binding is too weak, there is insufficient interaction to promote the reaction, whereas if the interaction is too strong, the reactant cannot desorb from the catalyst, leading to low amounts of the final product. Although this principle was originally an empirical one, the advancement of DFT and other <i>in-silico</i> techniques have allowed the Sabatier principle to be used as a quantitative basis to search for new catalysts. Many recent studies using machine learning and neural networks are also using the Sabatier principle as the conceptual basis for materials screening.</p>
+		
+		<p> However, the Sabatier principle is thermodynamic in nature, and cannot predict how fast a reaction will occur. Instead, the binding energy and the corresponding thermodynamic landscape are used to estimate the true activity (rate laws). For this reason, a conceptual expansion is necessary to predict and rationalize the behavior of catalysts under real, non-equilibrium conditions. Currently, I am collaborating with experimentalists to expand the theory of electrocatalysis. </p>
+		<div class="fig">
+			<img src="images/From_Eq_to_NonEq.png" width=100%  alt="">
+			<p class = caption>Comparison between existing catalyst theory (left) and my ongoing research (right)</p>
+		</div>
+
+	<h2 id="Model Networks">Model Networks</h2>
+		<h3>Electrocatalysis</h3>
+		<p>In electrocatalysis, there are several established mechanisms such as for the hydrogen evolution reaction (HER). So far, I have shown that the optimum binding energy can shift at higher rates of catalysis mathematically (2019 <i>JPCL</i>) and have shown experimentally that Pt, which is one of the best catalysts for the hydrogen evolution reaction, can be understood within this framework (2021 <i>ACS Catal.</i>). In this paper, I made a custom machine learning algorithm to compare experimental data with theoretical predictions, and to see how reliable the obtained fitting parameters are in a computationally efficient manner. I am working to expand this approach towards more complex mechanisms, such as oxygen evolution reaction (OER) so that we can rationalize the activity more accurately.</p>  
+
+		<p>Selected Publications: <a href = https://doi.org/10.1021/acs.jpclett.4c02162><i>JPCL</i> 2024</a>, <a href = https://pubs.acs.org/doi/full/10.1021/acscatal.1c01018><i>ACS Catalysis</i> 2021</a>, <a href = https://pubs.acs.org/doi/full/10.1021/acs.jpclett.9b01796><i>JPCL</i> 2019</a>.</p>
+
+		<h3 id="Michaelis-Menten Enzymes">Michaelis-Menten Enzymes</h3>
+		<p>Enzymes are a subclass of catalysts, and therefore, the mathematical models are quite similar to the modelling of electrocatalysts. In particular, Michaelis-Menten type enzymes have only a single intermediate and therefore, their reaction mechanism and the corresponding rate equation is almost identical to the HER. Based on this insight, I have proposed that the Michaelis-Menten constant <i>K</i><sub>m</sub>, which is a measure of the binding affinity, should be equal to the substrate concentration for maximium activity. My bioinformatic analysis on a dataset of 1000 wild-type enzymes have <i>K</i><sub>m</sub> values close to the substrate concentration, suggesting that even nature seems to respect the principle <i>K</i><sub>m</sub> = [S] (2023 <i>Nat. Commun.</i>).</p>
+			
+		<p>I am currently working with experimental biologists to verify the applicability of this principle. Once the behavior of each enzyme can be rationalized in relation to physicochemical parameters, I am hoping to expand the analysis from single enzymes to a network, which may lead to a general design principle of biological metabolism. </p>
+		
+		<p>Selected Publications: <a href = https://www.nature.com/articles/s41467-023-40471-y><i>Nat. Commun.</i> 2023</a>, <a href = https://onlinelibrary.wiley.com/doi/full/10.1002/anie.202318635><i>Angewandte</i> 2024</a></p>		
+
+		<div class="fig">
+			<img src="images/Catalysts_and_Enzymes.png" width=100%  alt="">
+			<p class = caption>Similarity between catalysts and enzymes.</p>
+		</div>
+
+	<h2 id="General Networks">General Networks</h2>
+		<p>Using model networks is the established approach in chemistry and microkinetics. However, this approach means every mechanism must be analyzed one-by-one. Furthermore, when the mechanism assumed initially becomes invalid, for example based on the detection of new intermediates using <i>in-situ</i> spectroscopy, the mathematical analysis must be performed again. To overcome this limitation, I am trying to make a quantitative theory which can predict the longterm behavior of multiple reaction mechanisms. My 2024 <i>JPCL</i> paper which attempts to rationalize the lifetime of catalysts with an unknown number (<i>N</i>) of intermediate species is one example of this approach.</p>
+		
+        <p>Selected Publications: <a href = https://doi.org/10.1021/acs.jpclett.4c02162><i>JPCL</i> 2024</a></p>	
+
+	<div id="footer">
+		<p>&copy:2023 Hideshi Ooka (Last Update: 2024/12/23)</p>
+	</div>
+</div>
+<!-- JavaScript -->
+	<script src="js/script.js"></script>
+</body>
+</html>
+
