@@ -37,12 +37,12 @@
     </div>
 
     <!-- PAGE SPECIFICS -->
-	<h2>Background</h2>
-		<p>Electrocatalysts play a key role in fuel cells, water electrolyzers, and other devices related to sustainable energy conversion. However, the most efficient catalysts today contain noble metals such as platinum or iridium. To enhance the technoeconomic viability of hydrogen-related technology, we must develop efficient catalysts requireing less noble metals.</p>
+	<h2>背景</h2>
+		<p>Electrocatalysts play a key role in fuel cells, water electrolyzers, and other devices related to sustainable energy conversion. However, the most efficient catalysts today contain noble metals such as platinum or iridium. To enhance the technoeconomic viability of hydrogen-related technology, we must develop efficient catalysts requiring less noble metals.</p>
 		
 		<p>Currently, the dominant method to identify promising materials is Density Functional Theory (DFT). This simulation technique yields information on the binding energies between the catalyst and key intermediates. Based on this information, the thermodynamic efficiency of the candidate material can be evaluated. Recent works incorporating machine learning have succeeded in identifying promising materials from thousands of candidates.</p>
 		
-		<p> However, this screening is based on thermodynamics, which contains no insight on time scale information. The most important catalytic properties, such as catalytic rates or material lifetime, are fundamentally questions about time scale. This is why we believe that understanding the kinetics of catalytic reactions is important, not only to identify promising candidates, but also to truly understand the behavior of catalysts under real operating conditions. Our research group will pursue this goal via the following three directions.</p>
+		<p>However, this screening is based on thermodynamics, which contains no insight on time scale information. The most important catalytic properties, such as catalytic rates or material lifetime, are fundamentally questions about time scale. This is why we believe that understanding the kinetics of catalytic reactions is important, not only to identify promising candidates, but also to truly understand the behavior of catalysts under real operating conditions. Our research group will pursue this goal via the following three directions.</p>
 		<div class="fig">
 			<img src="images/comparison.png" width=80%  alt="">
 			<p class = caption>Comparison between the dominant, DFT-based approach and our approach based on kinetics.</p>
@@ -57,7 +57,7 @@
 
 		<ol>
 			<h3><li>Developing Models to Predict Catalytic Properties</li></h3>
-			<p>In electrocatalysis, the most important property is the current density <i>j</i>(<i>t</i>) and how it changes with time. A stable catalyst would be able to maintain the current density for a long time. If it decays quickly, it means the catalyst is unstable. The selectivity towards side reactions can be evaluated by comparing partial current densities towards the main product and the side product (for example, OER vs CER).</p>
+			<p>In electrocatalysis, the most important property is the current density <i>j</i>(<i>t</i>) and how it changes with time. An active catalyst will exhibit a large current density. A stable catalyst would be able to maintain the current density for a long time. The selectivity towards side reactions can be evaluated by comparing partial current densities towards the main product and the side product (for example, OER vs CER).</p>
 
 			<p>These properties ultimately depend on the kinetic mechanism, which is a combination of the intermediate species, their reactions, and their rate constants. Therefore, in this project, we will derive new mathematical formulae which allows catalytic properties (activity, stability, selectivity) to be calculated from the kinetic mechanism. All of our work so far has been focused on mass-action kinetics. However, we are also incorporating more physical models to predict and rationalize electrocatalytic properties such as catalytic deactivation due to dissolution and delamination.</p>
 			
@@ -68,7 +68,7 @@
 
 			<p>We think there are opening for us to make a contribution. In particular, much of the previous literature has focused on the performance at low current densities (mA/cm<sup>2</sup> order). Under these conditions, the thermodynamic information obtained from DFT may be accurate as it is close to the equilibrium potential. However, real applications require current densities larger by 2 or 3 orders of magnitude (A/cm<sup>2</sup> order). Under these conditions, kinetic factors such as Tafel slopes cannot be ignored. We expect that the gap between screening conditions and actual applications has lead to many promising materials to be overlooked.</p>
 
-			<p>Additionally, we are currently trying to speed up materials evaluation using kinetic simulations. Extending material lifetime using a purely experimental approach is not easy. Each test may take weeks or months, and better materials require longer tests because they are more stable. We are currently developing algorithms to identify the kinetic mechanism from minute-scale measurements. If we could use the kinetic insigth to predict catalytic lifetime, this would allow us to perform experiments only for the most promising materials, which would greatly enhance the discovery of better materials.</p>
+			<p>Additionally, we are currently trying to speed up materials evaluation using kinetic simulations. Extending material lifetime using a purely experimental approach is not easy. Each test may take weeks or months, and better materials require longer tests because they are more stable. We are currently developing algorithms to identify the kinetic mechanism from minute-scale measurements. If we could use the kinetic insight to predict catalytic lifetime, this would allow us to perform experiments only for the most promising materials, which would greatly enhance the discovery of better materials.</p>
 
 			<p>Selected Publications: <a href = https://doi.org/10.1021/acs.jpclett.4c02162><i>JPCL</i> 2024</a>.</p>			
 
