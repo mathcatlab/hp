@@ -27,11 +27,9 @@
 					<li><a href="presentations.html">Presentations</a></li>
 					<li><a href="funding.html">Funding</a></li>
 					<li><a href="patents.html">Patents</a></li>
-					<li><a href="awards.html">Awards</a></li>
 				</ul>
             </li>
             <li><a href=vacancies.html>Vacancies</a></li>
-            <li><a href=blog.html>Blog</a></li>
             <li><a href=contact.html>Contact</a></li>
             <li class="lang_toggle"><a href=research_JP.html>Japanese</a></li>
         </ul>
@@ -39,44 +37,78 @@
     </div>
 
     <!-- PAGE SPECIFICS -->
-	<h2 id="Background">Background</h2>
-		<p> The Sabatier principle is at the core of our understanding of heterogeneous catalysis. Originally proposed around 1911 by the French chemist Paul Sabatier, this principle states that a good catalyst must bind the reactant at a strength which is "just right". If the binding is too weak, there is insufficient interaction to promote the reaction, whereas if the interaction is too strong, the reactant cannot desorb from the catalyst, leading to low amounts of the final product. Although this principle was originally an empirical one, the advancement of DFT and other <i>in-silico</i> techniques have allowed the Sabatier principle to be used as a quantitative basis to search for new catalysts. Many recent studies using machine learning and neural networks are also using the Sabatier principle as the conceptual basis for materials screening.</p>
+	<h2>Background</h2>
+		<p>Electrocatalysts play a key role in fuel cells, water electrolyzers, and other devices related to sustainable energy conversion. However, the most efficient catalysts today contain noble metals such as platinum or iridium. To enhance the technoeconomic viability of hydrogen-related technology, we must develop efficient catalysts requireing less noble metals.</p>
 		
-		<p> However, the Sabatier principle is thermodynamic in nature, and cannot predict how fast a reaction will occur. Instead, the binding energy and the corresponding thermodynamic landscape are used to estimate the true activity (rate laws). For this reason, a conceptual expansion is necessary to predict and rationalize the behavior of catalysts under real, non-equilibrium conditions. Currently, I am collaborating with experimentalists to expand the theory of electrocatalysis. </p>
+		<p>Currently, the dominant method to identify promising materials is Density Functional Theory (DFT). This simulation technique yields information on the binding energies between the catalyst and key intermediates. Based on this information, the thermodynamic efficiency of the candidate material can be evaluated. Recent works incorporating machine learning have succeeded in identifying promising materials from thousands of candidates.</p>
+		
+		<p> However, this screening is based on thermodynamics, which contains no insight on time scale information. The most important catalytic properties, such as catalytic rates or material lifetime, are fundamentally questions about time scale. This is why we believe that understanding the kinetics of catalytic reactions is important, not only to identify promising candidates, but also to truly understand the behavior of catalysts under real operating conditions. Our research group will pursue this goal via the following three directions.</p>
 		<div class="fig">
-			<img src="images/From_Eq_to_NonEq.png" width=100%  alt="">
-			<p class = caption>Comparison between existing catalyst theory (left) and my ongoing research (right)</p>
+			<img src="images/comparison.png" width=80%  alt="">
+			<p class = caption>Comparison between the dominant, DFT-based approach and our approach based on kinetics.</p>
 		</div>
 
-	<h2 id="Model Networks">Model Networks</h2>
-		<h3>Electrocatalysis</h3>
-		<p>In electrocatalysis, there are several established mechanisms such as for the hydrogen evolution reaction (HER). So far, I have shown that the optimum binding energy can shift at higher rates of catalysis mathematically (2019 <i>JPCL</i>) and have shown experimentally that Pt, which is one of the best catalysts for the hydrogen evolution reaction, can be understood within this framework (2021 <i>ACS Catal.</i>). In this paper, I made a custom machine learning algorithm to compare experimental data with theoretical predictions, and to see how reliable the obtained fitting parameters are in a computationally efficient manner. I am working to expand this approach towards more complex mechanisms, such as oxygen evolution reaction (OER) so that we can rationalize the activity more accurately.</p>  
-
-		<p>Selected Publications: <a href = https://doi.org/10.1021/acs.jpclett.4c02162><i>JPCL</i> 2024</a>, <a href = https://pubs.acs.org/doi/full/10.1021/acscatal.1c01018><i>ACS Catalysis</i> 2021</a>, <a href = https://pubs.acs.org/doi/full/10.1021/acs.jpclett.9b01796><i>JPCL</i> 2019</a>.</p>
-
-		<h3 id="Michaelis-Menten Enzymes">Michaelis-Menten Enzymes</h3>
-		<p>Enzymes are a subclass of catalysts, and therefore, the mathematical models are quite similar to the modelling of electrocatalysts. In particular, Michaelis-Menten type enzymes have only a single intermediate and therefore, their reaction mechanism and the corresponding rate equation is almost identical to the HER. Based on this insight, I have proposed that the Michaelis-Menten constant <i>K</i><sub>m</sub>, which is a measure of the binding affinity, should be equal to the substrate concentration for maximium activity. My bioinformatic analysis on a dataset of 1000 wild-type enzymes have <i>K</i><sub>m</sub> values close to the substrate concentration, suggesting that even nature seems to respect the principle <i>K</i><sub>m</sub> = [S] (2023 <i>Nat. Commun.</i>).</p>
-			
-		<p>I am currently working with experimental biologists to verify the applicability of this principle. Once the behavior of each enzyme can be rationalized in relation to physicochemical parameters, I am hoping to expand the analysis from single enzymes to a network, which may lead to a general design principle of biological metabolism. </p>
-		
-		<p>Selected Publications: <a href = https://www.nature.com/articles/s41467-023-40471-y><i>Nat. Commun.</i> 2023</a>, <a href = https://onlinelibrary.wiley.com/doi/full/10.1002/anie.202318635><i>Angewandte</i> 2024</a></p>		
-
+	<h2>Research Directions</h2>
+		<h3>Overview</h3>
 		<div class="fig">
-			<img src="images/Catalysts_and_Enzymes.png" width=100%  alt="">
+			<img src="images/overview.png" width=60%  alt="">
+			<p class = caption>An overview of the work in this group, which bridges applied mathematics, electrochemistry, and data science. KM: Kinetic Mechanism.</p>
+		</div>
+
+		<ol>
+			<h3><li>Developing Models to Predict Catalytic Properties</li></h3>
+			<p>In electrocatalysis, the most important property is the current density <i>j</i>(<i>t</i>) and how it changes with time. A stable catalyst would be able to maintain the current density for a long time. If it decays quickly, it means the catalyst is unstable. The selectivity towards side reactions can be evaluated by comparing partial current densities towards the main product and the side product (for example, OER vs CER).</p>
+
+			<p>These properties ultimately depend on the kinetic mechanism, which is a combination of the intermediate species, their reactions, and their rate constants. Therefore, in this project, we will derive new mathematical formulae which allows catalytic properties (activity, stability, selectivity) to be calculated from the kinetic mechanism. All of our work so far has been focused on mass-action kinetics. However, we are also incorporating more physical models to predict and rationalize electrocatalytic properties such as catalytic deactivation due to dissolution and delamination.</p>
+			
+			<p>Selected Publications: <a href = https://chemistry-europe.onlinelibrary.wiley.com/doi/abs/10.1002/cssc.202402625><i>ChemSusChem</i> 2025</a>, <a href = https://doi.org/10.1021/acs.jpclett.4c02162><i>JPCL</i> 2024</a>, <a href = https://pubs.acs.org/doi/full/10.1021/acs.jpclett.9b01796><i>JPCL</i> 2019</a>.</p>
+
+			<h3><li>Experimental Synthesis of Improved Materials</li></h3>
+			<p>In this project, we are trying to develop top-notch materials for electrocatalytic reactions. While many would agree that understanding the kinetics would be nice, few would be convinced of its importance unless good materials could actually be discovered through this approach. </p>
+
+			<p>We think there are opening for us to make a contribution. In particular, much of the previous literature has focused on the performance at low current densities (mA/cm<sup>2</sup> order). Under these conditions, the thermodynamic information obtained from DFT may be accurate as it is close to the equilibrium potential. However, real applications require current densities larger by 2 or 3 orders of magnitude (A/cm<sup>2</sup> order). Under these conditions, kinetic factors such as Tafel slopes cannot be ignored. We expect that the gap between screening conditions and actual applications has lead to many promising materials to be overlooked.</p>
+
+			<p>Additionally, we are currently trying to speed up materials evaluation using kinetic simulations. Extending material lifetime using a purely experimental approach is not easy. Each test may take weeks or months, and better materials require longer tests because they are more stable. We are currently developing algorithms to identify the kinetic mechanism from minute-scale measurements. If we could use the kinetic insigth to predict catalytic lifetime, this would allow us to perform experiments only for the most promising materials, which would greatly enhance the discovery of better materials.</p>
+
+			<p>Selected Publications: <a href = https://doi.org/10.1021/acs.jpclett.4c02162><i>JPCL</i> 2024</a>.</p>			
+
+			<h3><li>Developing Data-Analysis Techniques to Identify Rate Constants</li></h3>
+			<p>One of the main reason most works in catalysis don't focus on kinetics is because information on rate constants are difficult to obtain. Activation barrier calculations from DFT have errors of at least 0.03 eV, which translates into roughly a 5 fold error in rate constants. No kinetic predictions can be made without accurate rate constants; thus the lack of rate constants is a big challenge towards understanding the kinetics of catalytic reactions.</p> 
+			
+			<p>To address this challenge, we are developing new data-analysis techniques to obtain rate constants from experimental data. Our previous work used the genetic algorithm to fit HER Tafel plots using microkinetic equations. Recently, we are developing methods to fit OER Tafel plots, as well as non-steady-state electrochemical measurements, time-course data, and in-situ spectroscopy data. In addition to obtaining rate constants, these algorithms are also important to verify the validity of the proposed mechasmim. Namely, for a mechanism to be kinetically plausible, there must be at least one set of rate constants which can reproduce the experimental dataset.</p>
+			
+			<p>Selected Publications: <a href = https://pubs.acs.org/doi/full/10.1021/acscatal.1c01018><i>ACS Catalysis</i> 2021</a>.</p>
+		</ol>
+
+
+	<h2>Core Expertise</h2>
+ 	<ol>
+		<h3><li>Kinetic Analysis</li></h3>
+		<p>Our lab specializes in identifying the mechanism of chemical reactions through data analysis. We also have experience in handling large amounts of spectral data such as UV-Vis and small-angle X-ray diffraction (SAXS). If you have large volumes of data and are unsure of what to do with them, perhaps we can help. We also have ongoing work on denoising and fitting spectra.</p>
+		
+		<p>Selected Publications: <a href = https://www.nature.com/articles/s41467-024-52332-3><i>Nat. Commun.</i> 2024</a>, <a href = https://doi.org/10.1021/acs.jpclett.4c02162><i>JPCL</i> 2024</a>, <a href = https://pubs.acs.org/doi/full/10.1021/acscatal.1c01018><i>ACS Catalysis</i> 2021</a>.</p>
+
+		<h3><li>Optical Waveguide (OWG) Spectroscopy</li></h3>	
+		<p>The second core expertise of our lab is <a href="https://atr-sp.com/products/">optical waveguide (OWG)</a> spectroscopy. Conceptually, it is like an <i>in-situ</i> ATR UV-Vis: It is a surface sensitive technique, and the depth profile of a sample can be obtained by changing the angle of the incident light. It can obtain several spectra a second, making it perfect to determine the mechanism of electrocatalytic reactions. If you are interested in measuring your sample, please feel free to let us know.</p>
+
+		<p>Selected Publications: <a href = https://pubs.acs.org/doi/abs/10.1021/acs.jpcc.7b03749><i>JPCC</i> 2017</a>, <a href = https://doi.org/10.1039/C7CC02204B><i>PCCP</i> 2016</a>.</p>
+	</ol>	
+
+		<h2>Perspective and Other Directions</h2>
+		<div class="fig">
+			<img src="images/Catalysts_and_Enzymes.png" width=60%  alt="">
 			<p class = caption>Similarity between catalysts and enzymes.</p>
 		</div>
 
-	<h2 id="General Networks">General Networks</h2>
-		<p>Using model networks is the established approach in chemistry and microkinetics. However, this approach means every mechanism must be analyzed one-by-one. Furthermore, when the mechanism assumed initially becomes invalid, for example based on the detection of new intermediates using <i>in-situ</i> spectroscopy, the mathematical analysis must be performed again. To overcome this limitation, I am trying to make a quantitative theory which can predict the longterm behavior of multiple reaction mechanisms. My 2024 <i>JPCL</i> paper which attempts to rationalize the lifetime of catalysts with an unknown number (<i>N</i>) of intermediate species is one example of this approach.</p>
-		
-        <p>Selected Publications: <a href = https://doi.org/10.1021/acs.jpclett.4c02162><i>JPCL</i> 2024</a></p>	
+		<p>The directions list above are all targeted towards improving electrocatalysts. However, the theoretical approach focusing on identifying rate constants and then using them to make predictions is not restricted to electrocatalysis. In particular, Michaelis-Menten type enzymes have only a single intermediate and therefore, their reaction mechanism and corresponding rate equation is almost identical to the HER. Based on this insight, I have proposed that the Michaelis-Menten constant <i>K</i><sub>m</sub>, which is a measure of the binding affinity, should be equal to the substrate concentration for maximium activity. My bioinformatic analysis on a dataset of 1000 wild-type enzymes have <i>K</i><sub>m</sub> values close to the substrate concentration, suggesting that even nature seems to respect the principle <i>K</i><sub>m</sub> = [S] (2023 <i>Nat. Commun.</i>). We are looking forward to exciting collaborations, both inside and outside the immediate field of electrocatalysis.</p> 
+
+		<p>Selected Publications: <a href = https://www.nature.com/articles/s41467-023-40471-y><i>Nat. Commun.</i> 2023</a>, <a href = https://onlinelibrary.wiley.com/doi/full/10.1002/anie.202318635><i>Angewandte</i> 2024</a>, <a href = https://doi.org/10.1093/bbb/zbaf181><i>Biosci. Biotechnol. Biochem.</i> 2025</a>.</p>		
 
 	<div id="footer">
-		<p>&copy:2023 Hideshi Ooka (Last Update: 2024/12/23)</p>
+		<p>&copy: Mathematical Catalysis Research Team. All rights reserved. (Last Update: 2024/12/23)</p>
 	</div>
 </div>
 <!-- JavaScript -->
 	<script src="js/script.js"></script>
 </body>
 </html>
-
