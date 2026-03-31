@@ -1,0 +1,298 @@
+@charset "UTF-8";
+
+/*
+GENERAL STYLING
+================================================ */
+:root {
+	--main-color: #06466e;
+	--off-main-color: #246b96;
+	--sub-color: #BB1109;
+	--sub-sub-color: #F48153;
+	--off-white: #F7F9FB;
+}
+
+html {
+    font-size: 100%;
+}
+
+body { 
+	background-color:var(--off-white);	
+	font-family: sans-serif;
+}
+
+img { border-style: none;
+	max-width: 100%;
+}
+
+h2 {color: var(--main-color);
+	font-size: 1.5rem;
+	font-weight:bold;
+	border-bottom-width: 2.5px;
+	border-bottom-style: dotted;
+	border-bottom-color: var(--main-color);
+	padding-top: 10px;
+	padding-left: 10px;
+	margin-bottom: 0.5rem;
+	}
+
+h3 {color: var(--sub-color);
+	font-size: 1.2rem;
+	font-weight:bold;
+	padding: 20px 0px 5px;
+	text-decoration: underline var(--sub-color)
+	}
+
+p, th, td {
+	line-height: 120%;
+	color : #000000;
+	text-align: justify;
+	padding-bottom: 0.5rem;
+}
+
+a {
+	text-decoration: underline #333;
+}
+a:hover {
+	color: var(--sub-sub-color);
+	text-decoration: underline var(--sub-sub-color);
+}
+/*
+a:link {color: black;}
+a:visited {color: black;}
+a:active {color: var(--sub-sub-color);}
+*/
+ol {
+	list-style-type: decimal;
+	padding: 0 2rem;
+}
+ul li::before {
+	content: "";
+	width: 0.3rem;
+	height: 0.3rem;
+	margin: 0.25rem 0.5rem 0.25rem 0.25rem; 
+	border-radius: 50%;
+	background: var(--main-color);
+	display: inline-block;
+}
+li {
+	margin-bottom: 0.5rem;
+}
+/* SPECIFICS
+================================================ */	
+.wrapper {
+	width: 900px;
+    margin: 0 auto;
+	padding: 1rem 0rem;
+}
+/*=====main navbar=====*/
+.navbar ul {
+	display: flex;
+	align-items: stretch;
+	justify-content: space-between;
+	margin:0;
+	padding:0;
+	background-color: var(--main-color);
+}
+
+.navbar li {
+	overflow:visible; 
+	display: block;
+	flex: auto;
+	list-style-type:none;
+	background-color: var(--main-color);
+	margin: 0;
+	border: solid 1px var(--off-white);
+	text-align: center;
+}
+
+.navbar li::before {
+	display: none;
+}
+.navbar a {
+	display:block;
+	color: white;
+	text-decoration: none;	
+	padding: 0.3rem 0rem;
+  }
+
+.navbar a:hover{
+	background-color: var(--off-main-color);
+}  
+/* =====navbar language===== 
+This is necessary to keep English and Japanese navbars the same size*/
+li.lang_toggle {
+	width:6rem;
+}
+
+/* =====hide hamburger by default (for large screens) ===== */
+.hamburger-menu {
+	display: none;
+}
+
+
+/* =====navbar dropdown===== */
+li.dropdown {
+	position:relative;
+}
+.dropdown ul {
+	position:absolute;
+	top: 1.8rem; 
+	display:none;
+	box-shadow: 3px 5px 3px rgba(0,0,0,0.5);
+	z-index: 1;
+	list-style-type:none;
+}
+
+.dropdown:hover ul {
+	display:block;
+}
+
+.dropdown li {
+	/* background-color: var(--off-main-color); */
+	overflow:visible; 
+	border: solid 1px #ddd;
+	text-align: left;
+}
+.dropdown li a {
+	padding: 0.2rem 2rem;
+}
+
+
+
+/* =====footer===== */
+#footer {
+	background-color: var(--main-color);
+	margin-top: 30px;
+}
+
+#footer p {
+	color: var(--off-white);	
+	text-align: center;
+	padding: 2px;
+}
+
+/* =====footer===== */
+#scroll {
+		overflow-y: scroll;
+		height: calc(45vh);
+}
+
+
+
+/* 
+Individual Styles
+================================================ */
+/*index.html */
+.fig {
+	/* width: 90vw; */
+	text-align: center;
+	margin-top: 30px; 
+}
+p.caption{	
+	font-style: italic;
+	text-align: center;
+	margin-top: 0.3rem;
+}
+
+.news tr {
+	text-align: left;
+	border-bottom: solid 1px #7b7e80;
+}
+.news td {
+	padding: 0.5rem; 
+} 
+.news th {
+	padding: 0.5rem; 
+} 
+
+.float img {
+	float: left;
+	padding-right: 1rem;
+}
+
+table.info{
+	border-collapse: collapse;
+	border: 1px solid var(--main-color);
+}
+table.info th, table.info td{
+	padding: 8px 8px 8px 8px;
+	border: 1px solid var(--main-color);
+	text-align: left;
+	vertical-align: middle;
+}
+table.info th{
+	background-color: #F7F9FB;
+	color: var(--main-color);
+}
+
+
+
+
+
+/* MOBILE SIZE
+================================================ */
+@media (max-width: 950px) {
+	.wrapper {
+		width : 95vw;
+	}
+
+	/* Display the Hamburger Menu */
+	.hamburger-menu {
+		font-size: 1.5rem;
+		width: 5em;
+		display: block;
+		z-index: 100;
+		position: relative;
+		top: 0px;
+		left: 0px;
+		color: white;
+		/* background-size: 6px 6px; */
+		background-color: var(--main-color);
+		padding: 0.2em 0.5em 0.2em 2em;
+	}
+	.hamburger-menu::before {
+		position: absolute;
+		content: "";
+		padding: 0.5em 0.5em;
+		left: 0.5em; 
+		background: linear-gradient(
+			to bottom, 
+			var(--main-color), var(--main-color) 14%, 
+			white 14%, white 28%, 
+			var(--main-color) 28%, var(--main-color) 42%, 
+			white 42%, white 56%, 
+			var(--main-color) 56%, var(--main-color) 70%, 
+			white 70%, white 84%, 
+			var(--main-color) 84%, var(--main-color) 90%
+		);
+	}
+			
+	.navbar ul {
+		display: none;
+		position: absolute;
+		top: 3.5rem;
+		transition: .5s;
+	}
+	.nav-contents.open {
+		display: block;
+	}
+	
+	.nav-contents li {	
+		text-align: left;
+		width: 50vw;
+	}
+	.nav-contents li a {	
+		padding: 0.5rem 0rem 0.5rem 1rem;		
+	}
+	.dropdown ul {
+		display: block;
+		left: 50vw;
+		top: 0vw;
+	}
+}	
+
+@media (max-width: 430px) {
+	#footer p {
+		font-size: small;
+	}
+}
