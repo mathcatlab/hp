@@ -4,10 +4,10 @@
 GENERAL STYLING
 ================================================ */
 :root {
-	--main-color: #06466e;
-	--off-main-color: #246b96;
-	--sub-color: #BB1109;
-	--sub-sub-color: #F48153;
+	--main-color: #0099D3;
+	--off-main-color: #3763B4; 
+	--sub-color: #6FAF6B;
+	--sub-sub-color: #FF9600;
 	--off-white: #F7F9FB;
 }
 
