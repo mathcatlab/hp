@@ -4,11 +4,15 @@
 GENERAL STYLING
 ================================================ */
 :root {
-	--main-color: #0099D3;
-	--off-main-color: #3763B4; 
+	--main-color: #3763B4;
+	--off-main-color: #0099D3;
 	--sub-color: #6FAF6B;
 	--sub-sub-color: #FF9600;
 	--off-white: #F7F9FB;
+	--white: #FFFFFF;
+	--black: #000000;
+	--dark-grey: #333;
+	--light-grey: #AAAAAA;
 }
 
 html {
@@ -16,7 +20,7 @@ html {
 }
 
 body { 
-	background-color:var(--off-white);	
+	background-color:var(--white);	
 	font-family: sans-serif;
 }
 
@@ -44,7 +48,6 @@ h2 {color: var(--main-color);
 	border-bottom-style: dotted;
 	border-bottom-color: var(--main-color);
 	padding-top: 50px;
-	padding-left: 10px;
 	margin-bottom: 0.5rem;
 	}
 
@@ -52,19 +55,18 @@ h3 {color: var(--sub-color);
 	font-size: 1.2rem;
 	font-weight:bold;
 	padding: 20px 0px 5px;
-	text-decoration: underline var(--sub-color)
 	}
 
 
 p, th, td {
 	line-height: 120%;
-/	color : #000000;
+/	color: var(--black);
 	text-align: justify;
 	padding-bottom: 0.5rem;
 }
 
 a {
-	text-decoration: underline #333;
+	text-decoration: underline var(--dark-grey);
 }
 a:hover {
 	color: var(--sub-sub-color);
@@ -94,9 +96,14 @@ li {
 /* SPECIFICS
 ================================================ */	
 .wrapper {
-	width: 900px;
+	width: 1200px;
     margin: 0 auto;
 	padding: 1rem 0rem;
+}
+
+.main {
+	width: 900px;
+	margin: 0 auto;/
 }
 /*=====main navbar=====*/
 .navbar ul {
@@ -105,7 +112,7 @@ li {
 	justify-content: space-between;
 	margin:0;
 	padding:0;
-	background-color: var(--main-color);
+	/*background-color: var(--main-color);*/
 }
 
 .navbar li {
@@ -113,10 +120,9 @@ li {
 	display: block;
 	flex: auto;
 	list-style-type:none;
-	background-color: var(--main-color);
 	margin: 0;
-	border: solid 1px var(--off-white);
 	text-align: center;
+	padding: 0.3rem 0rem;
 }
 
 .navbar li::before {
@@ -124,14 +130,17 @@ li {
 }
 .navbar a {
 	display:block;
-	color: white;
 	text-decoration: none;	
-	padding: 0.3rem 0rem;
+	color: grey;
   }
 
-.navbar a:hover{
-	background-color: var(--off-main-color);
-}  
+.logo {
+	text-align: left;
+	font-weight: bold;
+	color: var(--black);
+}
+
+
 /* =====navbar language===== 
 This is necessary to keep English and Japanese navbars the same size*/
 li.lang_toggle {
@@ -162,7 +171,7 @@ li.dropdown {
 }
 
 .dropdown li {
-	/* background-color: var(--off-main-color); */
+	background-color: var(--off-white);
 	overflow:visible; 
 	border: solid 1px #ddd;
 	text-align: left;
@@ -175,23 +184,51 @@ li.dropdown {
 
 /* =====footer===== */
 #footer {
-	background-color: var(--main-color);
+	background-color: var(--light-grey);
 	margin-top: 30px;
+	text-align: center;
+	padding: 0.3rem 0rem;
+}
+#footer ul {
+	display: flex;
+	align-items: stretch;
+	justify-content: space-between;
+	margin:0;
+	padding:0;
+	/*background-color: var(--main-color);*/
+	text-align: center;
+	list-style-type:none;
+}
+
+#footer ul li {
+	overflow:visible; 
+	display: block;
+	flex: auto;
+
+	margin: 0;
+
+	padding: 0.3rem 0rem;
+}
+#footer .links ul {
+	
 }
 
 #footer p {
-	color: var(--off-white);	
+	color: var(--black);	
 	text-align: center;
-	padding: 2px;
 }
 
-/* =====footer===== */
+
 #scroll {
 		overflow-y: scroll;
-		height: calc(45vh);
+		height: calc(10vh);
+		/* This needs to be increased back to 45 when there are enough updates */
 }
 
+.left {
+	text-align: left;
 
+}
 
 /* 
 Individual Styles
@@ -253,6 +290,9 @@ table.info th{
 	color: var(--main-color);
 }
 
+.members ul li {
+	list-style-type: none;
+}
 
 
 
@@ -294,7 +334,7 @@ table.info th{
 			var(--main-color) 84%, var(--main-color) 90%
 		);
 	}
-	.logo {	
+	.banner {	
 		text-align: left;
 		width: 50vw;
 	}
