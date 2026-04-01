@@ -60,7 +60,7 @@ h3 {color: var(--sub-color);
 
 p, th, td {
 	line-height: 120%;
-/	color: var(--black);
+	color: var(--black);
 	text-align: justify;
 	padding-bottom: 0.5rem;
 }
@@ -95,7 +95,7 @@ li {
 }
 /* SPECIFICS
 ================================================ */	
-.wrapper {
+.wrapper {	
 	width: 1200px;
     margin: 0 auto;
 	padding: 1rem 0rem;
@@ -103,7 +103,7 @@ li {
 
 .main {
 	width: 900px;
-	margin: 0 auto;/
+	margin: 0 auto;
 }
 /*=====main navbar=====*/
 .navbar ul {
@@ -234,6 +234,7 @@ li.dropdown {
 Individual Styles
 ================================================ */
 /*index.html */
+/*
 .banner {
 	padding-top: 2rem;
 	padding-bottom: 1rem;
@@ -245,7 +246,7 @@ Individual Styles
 .banner .main {
 	font-size: 2rem;
 	font-weight:bold;
-}
+}*/
 
 
 .fig {
