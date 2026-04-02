@@ -304,6 +304,9 @@ table.info th{
 	.wrapper {
 		width : 95vw;
 	}
+	.main {
+		width : 95vw;
+	}
 
 	/* Display the Hamburger Menu */
 	.hamburger-menu {
@@ -356,6 +359,9 @@ table.info th{
 	.nav-contents li {	
 		text-align: left;
 		width: 50vw;
+		background-color: var(--off-white);
+		border: solid 1px #ddd;
+
 	}
 	.nav-contents li a {	
 		padding: 0.5rem 0rem 0.5rem 1rem;		
