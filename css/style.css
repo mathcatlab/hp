@@ -291,10 +291,71 @@ table.info th{
 	color: var(--main-color);
 }
 
-.members ul li {
+
+ul {
 	list-style-type: none;
 }
+/* ===== MEMBERS BOARD LAYOUT ===== */
 
+.members {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 2rem;
+	padding: 0;
+	margin: 2rem 0;
+}
+
+/* each member card */
+.members > li {
+	display: flex;
+	align-items: flex-start;
+	gap: 1rem;
+	background: var(--off-white);
+	border-radius: 1px;
+	padding: 1rem;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+	list-style: none;
+	margin: 0;
+}
+
+/* nested ul becomes vertical text block */
+.members ul {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 0;
+	margin: 0;
+	width: 100%;
+}
+
+/* remove blue circles */
+.members li::before {
+	display: none;
+	content: none;
+}
+
+
+
+/* image */
+.members img {
+	width: 140px;
+	object-fit: cover;
+	border-radius: 4px;
+	flex-shrink: 0;
+}
+
+.members .name {
+	font-size: 1.5rem;
+	font-weight: bold;
+}
+
+
+.position {
+	color: var(--main-color);
+	font-size: 1.2rem;
+	font-weight: bold;
+	margin-bottom: 0.5rem;
+}
 
 
 
@@ -372,6 +433,14 @@ table.info th{
 		top: 0vw;
 	}
 }	
+
+
+/* MOBILE */
+@media (max-width: 950px) {
+	.members {
+		grid-template-columns: 1fr;
+	}
+}
 
 @media (max-width: 430px) {
 	#footer p {
