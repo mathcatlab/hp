@@ -221,7 +221,7 @@ li.dropdown {
 
 #scroll {
 		overflow-y: scroll;
-		height: calc(10vh);
+		height: calc(20vh);
 		/* This needs to be increased back to 45 when there are enough updates */
 }
 
@@ -255,7 +255,7 @@ Individual Styles
 	margin-top: 30px; 
 }
 p.caption{	
-	/*font-style: italic;*/
+	font-weight: bold;
 	text-align: center;
 	margin-top: 0.3rem;
 }
