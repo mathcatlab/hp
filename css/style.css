@@ -234,19 +234,17 @@ li.dropdown {
 Individual Styles
 ================================================ */
 /*index.html */
-/*
 .banner {
 	padding-top: 2rem;
-	padding-bottom: 1rem;
-	font-size: 1.5rem;
-	line-height: 150%;
+	padding-bottom: 1.5rem;
 	text-align: center;
 }
 
-.banner .main {
-	font-size: 2rem;
-	font-weight:bold;
-}*/
+.banner p {
+	max-width: 50rem;
+	margin-left: auto;
+	margin-right: auto;
+}
 
 
 .fig {
