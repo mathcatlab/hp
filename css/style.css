@@ -4,15 +4,14 @@
 GENERAL STYLING
 ================================================ */
 :root {
-	--main-color: #3763B4;
-	--off-main-color: #0099D3;
-	--sub-color: #6FAF6B;
-	--sub-sub-color: #FF9600;
-	--off-white: #F7F9FB;
+	--main-color: #00688F;
+	--sub-color: #E0342C;
+	--sub-sub-color: #C6591E;
+	--off-white: #F4F7F7;
 	--white: #FFFFFF;
 	--black: #000000;
 	--dark-grey: #333;
-	--light-grey: #AAAAAA;
+	--light-grey: #A9B4B4;
 }
 
 html {
@@ -285,7 +284,7 @@ table.info th, table.info td{
 	vertical-align: middle;
 }
 table.info th{
-	background-color: #F7F9FB;
+	background-color: var(--off-white);
 	color: var(--main-color);
 }
 
