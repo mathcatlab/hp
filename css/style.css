@@ -107,21 +107,24 @@ li {
 /*=====main navbar=====*/
 .navbar ul {
 	display: flex;
-	align-items: stretch;
-	justify-content: space-between;
+	align-items: center;
+	justify-content: flex-start;
+	width: 100%;
+	gap: 2rem;
 	margin:0;
-	padding:0;
+	padding: 1.1rem 0;
 	/*background-color: var(--main-color);*/
 }
 
 .navbar li {
-	overflow:visible; 
-	display: block;
-	flex: auto;
+	overflow:visible;
+	display: flex;
+	align-items: center;
+	flex: none;
 	list-style-type:none;
 	margin: 0;
 	text-align: center;
-	padding: 0.3rem 0rem;
+	padding: 0;
 }
 
 .navbar li::before {
@@ -129,22 +132,25 @@ li {
 }
 .navbar a {
 	display:block;
-	text-decoration: none;	
+	text-decoration: none;
 	color: grey;
+	font-size: 1.1rem;
+	font-weight: 600;
   }
 
-.logo {
+.navbar li.logo {
 	text-align: left;
-	font-weight: bold;
-	color: var(--black);
+	font-weight: 800;
+	font-size: 1.25rem;
+	letter-spacing: 0.01em;
+	color: var(--main-color);
+	margin-right: auto;
 }
 
 
-/* =====navbar language===== 
-This is necessary to keep English and Japanese navbars the same size*/
-li.lang_toggle {
-	width:6rem;
-}
+/* =====navbar language=====
+No longer needs a fixed width: .logo's margin-right:auto keeps the
+link cluster right-aligned regardless of the toggle word's length. */
 
 /* =====hide hamburger by default (for large screens) ===== */
 .hamburger-menu {
@@ -158,8 +164,12 @@ li.dropdown {
 }
 .dropdown ul {
 	position:absolute;
-	top: 1.8rem; 
+	top: 100%;
 	display:none;
+	min-width: 12rem;
+	margin: 0;
+	padding: 0;
+	background-color: var(--off-white);
 	box-shadow: 3px 5px 3px rgba(0,0,0,0.5);
 	z-index: 1;
 	list-style-type:none;
