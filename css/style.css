@@ -16,6 +16,7 @@ GENERAL STYLING
 
 html {
     font-size: 100%;
+    scrollbar-gutter: stable;
 }
 
 body { 
@@ -94,7 +95,7 @@ li {
 }
 /* SPECIFICS
 ================================================ */	
-.wrapper {	
+.wrapper {
 	width: 1200px;
     margin: 0 auto;
 	padding: 1rem 0rem;
@@ -187,6 +188,12 @@ li.dropdown {
 }
 .dropdown li a {
 	padding: 0.2rem 2rem;
+}
+.dropdown li:hover {
+	background-color: var(--main-color);
+}
+.dropdown li:hover a {
+	color: var(--white);
 }
 
 
