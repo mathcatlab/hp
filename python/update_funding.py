@@ -11,7 +11,8 @@ def write_funding_html(LANG, translate_dict):
     df = df.sort_values(by = "Start", ascending = False).fillna("")
     N = df.shape[0]
 
-    out_html = "\n\n\t<h2>Funding</h2>\n\t<ol>\n"
+    header = "外部資金" if LANG == "_JP" else "Funding"
+    out_html = f"\n\n\t<h2>{header}</h2>\n\t<ol>\n"
     for i in range(N):
         data = df.iloc[i].astype(str)
         start,finish,title,name,funding_source,PI,amount,unit = data
