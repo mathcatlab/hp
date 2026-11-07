@@ -291,9 +291,12 @@ p.caption{
 }
 
 table.info{
+	margin-left: auto;
+	margin-right: auto;
 	border-collapse: collapse;
 	border: 1px solid var(--main-color);
 }
+
 table.info th, table.info td{
 	padding: 8px 8px 8px 8px;
 	border: 1px solid var(--main-color);
@@ -369,6 +372,15 @@ ul {
 	font-size: 1.2rem;
 	font-weight: bold;
 	margin-bottom: 0.5rem;
+}
+
+.map {
+	text-align: center;
+}
+
+.map iframe {
+	max-width: 100%;
+	border: 0;
 }
 
 
